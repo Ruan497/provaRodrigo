@@ -1,0 +1,21 @@
+<form #gameForm (submit)="salvarGame(gameForm)">
+    <div>
+        <label for="timeVisitante">Time visitante</label>
+        <input type="text" name="timeVisitante" id="timeVisitante" #timeVisitante [(ngModel)]="game.timeVisitante">
+    </div>
+    <div>
+        <label for="timeMandante">Time mandante</label>
+        <input type="text" name="timeMandante" id="timeMandante" #timeMandante [(ngModel)]="game.timeMandante">
+    </div>
+    <div>
+        <label for="golsTimeVisitante">Gols do visitande</label>
+        <input type="number" name="golsTimeVisitante" id="golsTimeVisitante" #golsTimeVisitante [(ngModel)]="game.golsTimeVisitante">
+    </div>
+    <div>
+        <label for="golsTimeMandante">Gols do Mandante</label>
+        <input type="number" name="golsTimeMandante" id="golsTimeMandante" #golsTimeMandante [(ngModel)]="game.golsTimeMandante">
+    </div>
+
+    <input class="btn" type="submit" value="Salvar">
+</form>
+

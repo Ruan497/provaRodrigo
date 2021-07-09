@@ -1,0 +1,22 @@
+<form #mandForm (submit)="procurarPeloMandante(mandForm)">
+    <div>
+        <label for="mandante">Verificar jogos que foram em casa</label>
+        <input type="text" id="mandante" name="mandante" #mandante [(ngModel)]="nomeMandante">
+    </div>
+    <input class="btn" type="submit" value="Verificar">
+</form>
+
+<form #visForm (submit)="procurarPeloVisitante(visForm)">
+    <div>
+        <label for="visitante">Verificar jogos que foram fora</label>
+        <input type="text" id="visitante" name="visitante" #visitante [(ngModel)]="nomeVisitante">
+    </div>
+    <input class="btn" type="submit" value="Verificar">
+</form>
+
+<div  *ngIf="timeGames.length > 0">
+    <h2>Jogos do time escolhido</h2>
+    <ul>
+        <li *ngFor="let g of timeGames">{{g.timeMandante}} {{g.golsTimeMandante}} x {{g.golsTimeVisitante}} {{g.timeVisitante}} <input id="btndel" type="button" value="Deletar" (click)="deletarGame(g.id)"></li>
+    </ul>
+</div>
